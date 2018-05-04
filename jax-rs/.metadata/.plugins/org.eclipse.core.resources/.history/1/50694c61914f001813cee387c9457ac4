@@ -1,0 +1,5 @@
+package org.manish.javaxrs.javaxrxwork.messages;
+
+public class messages {
+
+}

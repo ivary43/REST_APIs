@@ -1,0 +1,5 @@
+package org.manish.javaxrs.javaxrxwork.models;
+
+public class message_model {
+
+}

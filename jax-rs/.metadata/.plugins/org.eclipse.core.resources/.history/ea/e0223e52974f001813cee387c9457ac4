@@ -1,0 +1,5 @@
+package org.manish.javaxrs.javaxrxwork.service;
+
+public class messages_service {
+
+}

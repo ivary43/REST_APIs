@@ -1,0 +1,18 @@
+package org.manish.javaxrs.javaxrxwork.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.manish.javaxrs.javaxrxwork.databases.DatabaseClass;
+import org.manish.javaxrs.javaxrxwork.models.Message;
+
+public class messages_service {
+
+	private Map<Long,message_model> messages = DatabaseClass.getMessages(); 
+	
+	public List<message_model> getAllMessage() {
+		return new ArrayList<message_model>(messages.values());
+	}
+	public 
+}

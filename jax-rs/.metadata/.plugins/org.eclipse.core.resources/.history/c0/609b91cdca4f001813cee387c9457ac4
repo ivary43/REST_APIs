@@ -1,0 +1,5 @@
+package org.manish.javaxrs.javaxrxwork.bean;
+
+public class beanFilter {
+
+}

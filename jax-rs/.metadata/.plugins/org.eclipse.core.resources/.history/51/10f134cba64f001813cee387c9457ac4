@@ -1,0 +1,15 @@
+package org.manish.javaxrs.javaxrxwork.models;
+
+import java.util.Date;
+
+public class Profile {
+
+	private long Id;
+	private String profileName;
+	private String firstName;
+	private String lastName;
+	private Date created;
+	
+	
+}
+z

@@ -1,0 +1,23 @@
+package org.manish.javaxrs.javaxrxwork.messages;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.manish.javaxrs.javaxrxwork.models.Message;
+import org.manish.javaxrs.javaxrxwork.service.messages_service;
+
+@Path("/messages")
+public class messages {
+
+	messages_service services = new messages_service(); 
+	
+	@GET
+	@Produces(MediaType.APPLICATION_XML)
+	public List<Message> retriveMessage() {
+		return services.retrieveMessages();
+	}
+ }

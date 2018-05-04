@@ -1,0 +1,55 @@
+package org.manish.javaxrs.javaxrxwork.messages;
+
+import java.util.List;
+
+import javax.ws.rs.BeanParam;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import org.manish.javaxrs.javaxrxwork.CommentResource;
+import org.manish.javaxrs.javaxrxwork.bean.beanFilter;
+import org.manish.javaxrs.javaxrxwork.models.Message;
+import org.manish.javaxrs.javaxrxwork.service.messages_service;
+
+@Path("/messages")
+public class messages {
+
+	messages_service services = new messages_service(); 
+	
+	//filter bean to make a container to contain all the query params 
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Message> retriveMessage(@BeanParam beanFilter filterBean) {
+		if(filterBean.getYear()>0) {
+		 return services.getAllMessage(filterBean.getYear());
+		} else {
+		return services.getAllMessage();
+		}
+	}
+	
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response addMessage(Message message) {
+		return services.addMessage(message);
+	}
+	
+	@GET
+	@Path("/{messageId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Message test(@PathParam("messageId") long messageId){
+		return services.getMessage(messageId);
+	}
+	
+	@Path("/{messageId}/comments")
+	public CommentResource getCommentResource() {
+		return new CommentResource();
+	}
+ }

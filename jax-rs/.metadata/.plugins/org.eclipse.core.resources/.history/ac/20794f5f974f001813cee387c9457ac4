@@ -1,0 +1,20 @@
+package org.manish.javaxrs.javaxrxwork.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.manish.javaxrs.javaxrxwork.models.message_model;
+
+public class messages_service {
+
+	public List<message_model> retrieveMessages() {
+		message_model m1 = new message_model(1,"This is kinda message","Manish kumar");
+		message_model m2 = new message_model(2,"this is another kinda","manu");
+		
+		List<message_model> ss = new ArrayList();
+		ss.add(m1);
+		ss.add(m2);
+		
+		return ss;
+	}
+}
